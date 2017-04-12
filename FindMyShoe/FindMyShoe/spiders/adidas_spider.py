@@ -19,7 +19,7 @@ class ShoeSpider(scrapy.Spider):
             yield { 
                 'shoeName': shoeBox.css("a.product-link a::attr(data-productname)").extract_first(),
                 'stockStatus': shoeBox.css("span.badge-text::text").extract_first(),
-                'price': shoeBox.css("span.salesprice::text").extract_first()
+                'price': shoeBox.css("span.salesprice::text").extract()
             }
             
 
